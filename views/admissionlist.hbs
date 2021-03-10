@@ -1,0 +1,30 @@
+<h3 class="text-center mb-2">Admission List</h3>
+<div class="row">
+    <div class="col-4 mb-3">
+        <input class="form-control fa fa-search" id="myInput" type="text" placeholder="Search..">
+    </div>
+</div>
+<table class="table table-responsive-sm table-striped table-bordered table-hover table-dark">
+    <thead class="thead-light">
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>MIDDLE NAME</th>
+        <th>LAST NAME</th>
+        <th>SEX</th>
+        <th>ADDRESS</th>
+        <th>PHONE NUMBER</th>
+    </thead>
+    <tbody id="tablerow">
+        {{#each data}}
+        <tr>
+            <td>{{ID}}</td>
+            <td>{{firstname}}</td>
+            <td>{{middlename}}</td>
+            <td>{{lastname}}</td>
+            <td>{{sex}}</td>
+            <td>{{address}}</td>
+            <td>{{phoneno}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

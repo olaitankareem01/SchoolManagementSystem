@@ -1,0 +1,29 @@
+version: "3"
+services: 
+  app:
+    build: .
+    env_file: 
+      -.env
+    ports: 
+      -"8000:7000"
+    depends_on: 
+      -db
+    networks:
+      - pga_network
+  db:
+    image: "mysql:5.7"
+    ports:
+      -"3307:3306"
+    volumes: 
+      -pga_volume:"var/lib/mysql"
+    environment: 
+     - MYSQL_ROOT_PASSWORD=password
+     - MYSQL_USER=root
+     - MYSQL_DATABASE=pga_db
+    networks:
+      - pga_network
+  volumes:
+    pga_volume:
+  networks:
+    pga_network:
+       name: pga_network
